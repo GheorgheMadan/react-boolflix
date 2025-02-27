@@ -12,7 +12,7 @@ export default function Header() {
                         <h1>BOOLFLIX</h1>
                     </div>
                     <div>
-                        <NavLink to='/'>Home</NavLink>
+                        {/* <NavLink to='/'>Home</NavLink> */}
                     </div>
                 </section>
                 <section>
