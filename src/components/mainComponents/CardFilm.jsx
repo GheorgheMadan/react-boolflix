@@ -7,10 +7,10 @@ export default function CardFilm(props) {
     return (
         <>
             <div className="card">
-                <h3>{filmCard.title}</h3>
-                <span>{filmCard.original_title}</span><br />
-                <span>{filmCard.original_language}</span><br />
-                <span>{filmCard.vote_average}</span>
+                <h3>{filmCard.title || filmCard.name}</h3>
+                <span>{filmCard.original_title || filmCard.original_name}</span><br />
+                <span>Language: {filmCard.original_language}</span><br />
+                <span>Vote: {filmCard.vote_average}</span>
             </div>
         </>
     )
