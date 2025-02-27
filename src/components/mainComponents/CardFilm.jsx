@@ -7,6 +7,7 @@ export default function CardFilm(props) {
     return (
         <>
             <div className="card">
+                <img src={`https://image.tmdb.org/t/p/w342${filmCard.poster_path}`} alt="" />
                 <h3>{filmCard.title || filmCard.name}</h3>
                 <span>{filmCard.original_title || filmCard.original_name}</span><br />
                 <span>Language: {filmCard.original_language}</span><br />
