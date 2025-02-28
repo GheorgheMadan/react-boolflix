@@ -9,13 +9,25 @@ import CardFilm from "./CardFilm"
 // CardsList.jsx
 export default function CardsList() {
 
-    const { films } = useContext(GlobalContext)
+    const { films, tvSeries } = useContext(GlobalContext)
+
 
     return (
         <>
             <section className="container-cards">
                 {films.map((film) => (
-                    <CardFilm key={film.id} filmCard={film} />
+                    <>
+                        <h2>Film</h2>
+                        <CardFilm key={film.id} mediaCard={film} type='film' />
+                    </>
+                ))}
+            </section>
+            <section className="container-cards">
+                {tvSeries.map((serie) => (
+                    <>
+                        <h2>Serie Tv</h2>
+                        <CardFilm key={serie.id} mediaCard={serie} type='serie' />
+                    </>
                 ))}
             </section>
         </>

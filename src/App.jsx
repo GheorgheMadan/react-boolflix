@@ -16,10 +16,11 @@ import { useState } from "react";
 function App() {
 
   const [films, setFilms] = useState([])
+  const [tvSeries, setTvSeries] = useState([])
 
   return (
     <>
-      <GlobalContext.Provider value={{ films, setFilms }}>
+      <GlobalContext.Provider value={{ films, setFilms, tvSeries, setTvSeries }}>
         <BrowserRouter>
           <Routes>
             {/* Setto il layout di Default */}

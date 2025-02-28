@@ -8,3 +8,11 @@ header section {
     display: flex;
     gap: 10px;
 }
+
+.star {
+    color: rgb(240, 240, 94);
+}
+
+.star2 {
+    color: rgb(255, 255, 255);
+}

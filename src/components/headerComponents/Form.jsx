@@ -15,28 +15,34 @@ export default function Form() {
     const [form, setForm] = useState('')
 
     // accedo alla funzione setFilms() da App.jsx per utilizzarla nella fetchFilms
-    const { setFilms } = useContext(GlobalContext)
+    const { setFilms, setTvSeries } = useContext(GlobalContext)
 
 
 
     function fetchFilms(e) {
         e.preventDefault()
 
-        // const tvSeries = `https://api.themoviedb.org/3/search/tv?api_key=0afbbb328ee875db0e8cd1259868bf87&query=shamless`
         const movies = `https://api.themoviedb.org/3/search/movie?api_key=0afbbb328ee875db0e8cd1259868bf87&query=${form}`
+        const tvSeries = `https://api.themoviedb.org/3/search/tv?api_key=0afbbb328ee875db0e8cd1259868bf87&language=it_IT&query=${form}`
 
-        axios.get(movies)
-            .then(res => {
-                setFilms(res.data.results)
-                // ,console.log(res.data.results)
-            }
-            )
-            .catch(err => console.error('caricamento fallito', err)
-            )
+        axios.all([
+            axios.get(movies),
+            axios.get(tvSeries)
+        ])
+            .then(axios.spread(function (resMovies, resSeries) {
+                console.log(resMovies.data.results);
+                setFilms(resMovies.data.results)
+
+                console.log(resSeries.data.results);
+                setTvSeries(resSeries.data.results)
+            }))
+
+            .catch(error => console.log(error));
     }
     // useEffect(() => {
     //     fetchFilms()
     // }, [])
+
 
     // funzione per aggiornare lo stato dell'input
     function changeInput(e) {
@@ -45,14 +51,16 @@ export default function Form() {
     }
 
     return (
-        <form onSubmit={fetchFilms}>
-            <input
-                type="text"
-                name="name"
-                value={form}
-                onChange={changeInput}
-            />
-            <button type="submit">Cerca</button>
-        </form>
+        <>
+            <form onSubmit={fetchFilms}>
+                <input
+                    type="text"
+                    name="name"
+                    value={form}
+                    onChange={changeInput}
+                />
+                <button type="submit">Cerca</button>
+            </form>
+        </>
     )
 } 
