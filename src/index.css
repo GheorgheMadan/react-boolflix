@@ -1,14 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: gray;
+}
+
+/* REGOLE HEADER */
 header {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 35px 25px 20px;
+    align-items: end;
+    background-color: black;
 }
 
-header section {
+/* REGOLE TITOLO PAGINA */
+header a {
+    text-decoration: none;
+    color: rgb(173, 8, 8);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* REGOLE SEARCH BAR */
+header input {
+    /* border: 1px solid black; */
+    border-radius: 7px;
+    padding: 6px;
+}
+
+header form button {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* border: 1px solid white; */
+    padding: 5px 10px;
+    font-size: 20px;
+
+}
+
+/* GESTIONE REGOLE MAIN */
+main {
+    padding: 40px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
 }
 
+.container-img {
+    width: 300px;
+    height: 450px;
+    position: absolute;
+}
+
+.container-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.container-content {
+    width: 300px;
+    height: 450px;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 60px 15px;
+    opacity: 0;
+    background-color: black;
+    color: white;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* Hide scrollbar for IE, Edge */
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.container-content::-webkit-scrollbar {
+    display: none;
+}
+
+.card:hover .container-img {
+    opacity: 0;
+}
+
+.card:hover .container-content {
+    opacity: 1;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+/* gestione vote star */
 .star {
     color: rgb(240, 240, 94);
 }

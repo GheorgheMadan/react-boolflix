@@ -14,22 +14,18 @@ export default function CardsList() {
 
     return (
         <>
-            <section className="container-cards">
-                {films.map((film) => (
-                    <>
-                        <h2>Film</h2>
-                        <CardFilm key={film.id} mediaCard={film} type='film' />
-                    </>
-                ))}
-            </section>
-            <section className="container-cards">
-                {tvSeries.map((serie) => (
-                    <>
-                        <h2>Serie Tv</h2>
-                        <CardFilm key={serie.id} mediaCard={serie} type='serie' />
-                    </>
-                ))}
-            </section>
+            {films.map((film) => (
+                <>
+                    {/* <h2>Film</h2> */}
+                    <CardFilm key={film.id} mediaCard={film} type='film' />
+                </>
+            ))}
+            {tvSeries.map((serie) => (
+                <>
+                    {/* <h2>Serie Tv</h2> */}
+                    <CardFilm key={serie.id} mediaCard={serie} type='serie' />
+                </>
+            ))}
         </>
     )
 }

@@ -2,11 +2,14 @@
 import GlobalContext from "../../contexts/GlobalContext"
 
 // import del useEffect e useContext 
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 
 // import di axios
 import axios from "axios"
 
+// import dei font aswome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch"
 
 // Form.jsx
 export default function Form() {
@@ -58,8 +61,10 @@ export default function Form() {
                     name="name"
                     value={form}
                     onChange={changeInput}
+                    placeholder="cerca"
+                    required
                 />
-                <button type="submit">Cerca</button>
+                <button type="submit">{<FontAwesomeIcon icon={faSearch} />}</button>
             </form>
         </>
     )

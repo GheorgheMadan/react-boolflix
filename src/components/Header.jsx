@@ -7,18 +7,13 @@ export default function Header() {
     return (
         <>
             <header>
-                <section>
-                    <div>
-                        <h1>BOOLFLIX</h1>
-                    </div>
-                    <div>
-                        {/* <NavLink to='/'>Home</NavLink> */}
-                    </div>
-                </section>
-                <section>
+                <div>
+                    <NavLink to='/'>BOOLFLIX</NavLink>
+                </div>
+                <div>
                     <Form />
-                </section>
-            </header>
+                </div>
+            </header >
         </>
     )
 }
