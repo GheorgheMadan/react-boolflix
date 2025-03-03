@@ -7,9 +7,17 @@ export default function Header() {
     return (
         <>
             <header>
-                <div>
-                    <NavLink to='/'>BOOLFLIX</NavLink>
-                </div>
+                <nav>
+                    <NavLink path='/'>
+                        <img src="https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="" />
+                    </NavLink>
+                    <NavLink to='/'>Home</NavLink>
+                    <NavLink to='serie-tv'>Serie TV</NavLink>
+                    {/* <NavLink>Film</NavLink>
+                    <NavLink>Originali</NavLink>
+                    <NavLink>Aggiunti di recente</NavLink>
+                    <NavLink>La mia lista</NavLink> */}
+                </nav>
                 <div>
                     <Form />
                 </div>

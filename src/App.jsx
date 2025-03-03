@@ -9,6 +9,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 
 // import delle pagine 
 import HomePage from "./pages/HomePage";
+import SerieTvPage from "./pages/SerieTvPage";
 
 // import di useEffect e useState
 import { useState } from "react";
@@ -26,6 +27,7 @@ function App() {
             {/* Setto il layout di Default */}
             <Route element={<DefaultLayout />}>
               <Route index element={<HomePage />} />
+              <Route path="serie-tv" element={<SerieTvPage />} />
             </Route>
           </Routes>
         </BrowserRouter>
